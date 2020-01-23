@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSON;
 import com.vily.websocket_android_server.bean.PaketData;
@@ -68,6 +69,8 @@ public class MainActivity extends AppCompatActivity {
                     channel. writeAndFlush(
                             new TextWebSocketFrame(JSON.toJSONString(paketData)));
 
+                }else{
+                    Toast.makeText(getApplicationContext(),"leapId 未绑定",Toast.LENGTH_SHORT).show();
                 }
             }
         });
